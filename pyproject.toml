@@ -73,13 +73,16 @@ src = ["src"]
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "UP", "ANN"]
 # Relaxing annotation rules a bit for personal use - ANN001/ANN201 are noisy during exploration
-ignore = ["ANN101", "ANN102", "ANN001", "ANN201"]
+# Also ignoring ANN202 (missing return type for private functions) - too noisy for internal helpers
+ignore = ["ANN101", "ANN102", "ANN001", "ANN201", "ANN202"]
 
 [tool.mypy]
 python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
+# Disabling strict optional checks for now - too many false positives while exploring the codebase
+strict_optional = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
