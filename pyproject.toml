@@ -88,7 +88,8 @@ asyncio_mode = "auto"
 # -p no:warnings keeps output clean while exploring the codebase
 # Removed -x so the full test suite runs and I can see all failures at once
 # Added --tb=short to get more useful traceback summaries without the full noise
-addopts = "-v -p no:warnings --tb=short"
+# Added -q (quiet) on top of -v to reduce per-test noise when running the full suite locally
+addopts = "-v -p no:warnings --tb=short -q"
 
 [tool.coverage.run]
 source = ["src/fincept_terminal"]
