@@ -92,8 +92,5 @@ asyncio_mode = "auto"
 # Removed -x so the full test suite runs and I can see all failures at once
 # Added --tb=short to get more useful traceback summaries without the full noise
 # Dropped -q so individual test names are visible without -v drowning them out
-addopts = "-v -p no:warnings --tb=short"
-
-[tool.coverage.run]
-source = ["src/fincept_terminal"]
-omit = ["tests/*", "**/__main__.py"]
+# Added --tb=short for concise tracebacks and -p no:warnings to reduce noise
+addopts = "--tb=short -p no:warnings"
