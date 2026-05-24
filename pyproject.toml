@@ -85,7 +85,8 @@ ignore_missing_imports = true
 testpaths = ["tests"]
 asyncio_mode = "auto"
 # Removed --cov flags so a plain `pytest` run doesn't require coverage installed
-addopts = "-v"
+# -p no:warnings keeps output clean while exploring the codebase
+addopts = "-v -p no:warnings"
 
 [tool.coverage.run]
 source = ["src/fincept_terminal"]
